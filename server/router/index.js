@@ -1,8 +1,7 @@
-const cardsController = require("../controllers/cards-controller");
+const itemsController = require("../controllers/items-controller");
 const Router = require("express").Router;
 const router = new Router();
-
-router.post(`/card`, cardsController.addCard);
-router.get(`/cards`, cardsController.getCards);
+router.get(`/`, itemsController.getItems);
+router.post(`/`, itemsController.createItem);
 
 module.exports = router;

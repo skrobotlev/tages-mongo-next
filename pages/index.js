@@ -1,5 +1,6 @@
 import * as React from "react";
 import CreditCardForm from "../components/credit-card/CreditCardForm";
+// import RequestPage from "../components/request-page";
 
 const CardPage = () => {
   return (
@@ -11,7 +12,9 @@ const CardPage = () => {
         margin: "25%",
       }}
     >
+      {/* <input type="file" id="image" name="image" value="" /> */}
       <CreditCardForm />
+      {/* <RequestPage /> */}
     </div>
   );
 };

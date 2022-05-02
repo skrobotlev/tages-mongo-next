@@ -13,3 +13,11 @@ module.exports = {
       "mongodb+srv://test:test@cluster0.ugvtp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   },
 };
+// const nextConfig = {
+//   env: {
+//     MONGO_URI:
+//       "mongodb+srv://test:test@cluster0.ugvtp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+//   },
+// };
+
+// export default nextConfig;

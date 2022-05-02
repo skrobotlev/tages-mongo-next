@@ -1,7 +1,8 @@
 import axios from "axios";
 import { makeAutoObservable } from "mobx";
-import { API_URL } from "../http";
+import { API_URL } from "../api";
 import CardService from "../services/card-service";
+import ItemService from "../services/item-service";
 
 export default class Store {
   user = {};
@@ -11,6 +12,18 @@ export default class Store {
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  async addItem({ name, image }) {
+    try {
+      const response = await ItemService.addItem(name, image);
+      console.log(response, "response");
+
+      return response;
+    } catch (error) {
+      console.log(error.response?.data?.message);
+      console.log(error);
+    }
   }
 
   async addCard({ cardNumber, expirationDate, cvv, amount }) {

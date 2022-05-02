@@ -1,4 +1,4 @@
-import $api from "../http";
+import $api from "../api";
 
 export default class CardService {
   static async addCard(cardNumber, expirationDate, cvv, amount) {
