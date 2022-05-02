@@ -16,7 +16,7 @@
     "price-span cart-icon like-icon";
   width: 350px;
   height: 350px;
-  border: 2px #000 solid;
+  border: 1px gray solid;
   h1,
   h2,
   h3 {
@@ -28,6 +28,7 @@
   grid-area: img;
   max-width: 250px;
   max-height: 250px;
+  margin-top: 10px;
 }
 .item-card__price {
   grid-area: price;
