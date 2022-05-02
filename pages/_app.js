@@ -4,6 +4,7 @@ import "../styles/main.scss";
 import "../styles/variables.scss";
 import "../styles/CreditCard.scss";
 import "../styles/CreditCardForm.scss";
+import "../styles/item-card.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

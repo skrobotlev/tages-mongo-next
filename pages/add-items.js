@@ -6,7 +6,17 @@ import Store from "../store/store";
 function App() {
   const store = new Store();
 
-  const [item, setItem] = useState({ name: "", image: "" });
+  // const [item, setItem] = useState({ name: "", image: "" });
+  const [item, setItem] = useState({
+    name: "",
+    image: "",
+    code: "",
+    material: "",
+    price: {
+      oldPrice: "",
+      currentPrice: "",
+    },
+  });
   const [items, setItems] = useState([]);
 
   const onSubmitHandler = async (e, values) => {
@@ -31,8 +41,43 @@ function App() {
       <form action="" onSubmit={onSubmitHandler}>
         <input
           type="text"
+          placeholder="Name"
           className="input-field"
           onChange={(e) => setItem({ ...item, name: e.target.value })}
+        />
+        <input
+          type="text"
+          placeholder="Code"
+          className="input-field"
+          onChange={(e) => setItem({ ...item, code: e.target.value })}
+        />
+        <input
+          type="text"
+          placeholder="OldPrice"
+          className="input-field"
+          onChange={(e) =>
+            setItem({
+              ...item,
+              price: { ...item.price, oldPrice: e.target.value },
+            })
+          }
+        />{" "}
+        <input
+          type="text"
+          placeholder="CurrentPrice"
+          className="input-field"
+          onChange={(e) =>
+            setItem({
+              ...item,
+              price: { ...item.price, currentPrice: e.target.value },
+            })
+          }
+        />
+        <input
+          type="text"
+          placeholder="Material"
+          className="input-field"
+          onChange={(e) => setItem({ ...item, material: e.target.value })}
         />
         <FileBase64
           type="file"
@@ -43,7 +88,7 @@ function App() {
           <button className="btn">submit</button>
         </div>
       </form>
-      {items?.map((item) => (
+      {/* {items?.map((item) => (
         <div className="card" key={item._id}>
           <div className="card-image waves-effect waves-block waves-light">
             <img
@@ -58,7 +103,7 @@ function App() {
             </span>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }

@@ -7,6 +7,16 @@ const ItemSchema = new mongoose.Schema({
   code: {
     type: String,
   },
+  price: {
+    type: Object,
+    content: {
+      oldPrice: Number,
+      currentPrice: Number,
+    },
+  },
+  material: {
+    type: String,
+  },
   image: {
     type: String,
   },

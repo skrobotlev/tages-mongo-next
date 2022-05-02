@@ -1,7 +1,5 @@
 import axios from "axios";
 import { makeAutoObservable } from "mobx";
-import { API_URL } from "../api";
-import CardService from "../services/card-service";
 import ItemService from "../services/item-service";
 
 export default class Store {
@@ -26,26 +24,26 @@ export default class Store {
     }
   }
 
-  async addCard({ cardNumber, expirationDate, cvv, amount }) {
-    try {
-      const response = await CardService.addCard(
-        cardNumber,
-        expirationDate,
-        cvv,
-        amount
-      );
-      console.log(response, "response");
-      this.addingCard = response;
-      console.log(
-        JSON.stringify(
-          this.addingCard.data.card._id,
-          this.addingCard.data.card.amount
-        )
-      );
-      return response;
-    } catch (error) {
-      console.log(error.response?.data?.message);
-      console.log(error);
-    }
-  }
+  // async addCard({ cardNumber, expirationDate, cvv, amount }) {
+  //   try {
+  //     const response = await CardService.addCard(
+  //       cardNumber,
+  //       expirationDate,
+  //       cvv,
+  //       amount
+  //     );
+  //     console.log(response, "response");
+  //     this.addingCard = response;
+  //     console.log(
+  //       JSON.stringify(
+  //         this.addingCard.data.card._id,
+  //         this.addingCard.data.card.amount
+  //       )
+  //     );
+  //     return response;
+  //   } catch (error) {
+  //     console.log(error.response?.data?.message);
+  //     console.log(error);
+  //   }
+  // }
 }
