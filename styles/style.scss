@@ -1,11 +1,26 @@
 body {
-  background-color: #d9c2ba;
+  // background-color: #d9c2ba;
+  font-family: SFUIDisplay-semibold;
+  margin: 0;
 }
 
-.container {
+.add-items {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-items__container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 160px;
+  max-width: 500px;
+  overflow: hidden;
+  input {
+    margin: 5px;
+  }
 }

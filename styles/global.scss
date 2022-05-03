@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "SFUIDisplay-semibold";
+  src: url("./font/SFUIDisplay-Semibold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "SFUI-text";
+  src: url("./font/SFUIText-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+.items {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.items__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  grid-gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.navigation {
+  width: 100%;
+  background-color: beige;
+  display: flex;
+  justify-content: space-around;
+  font-family: "Courier New", Courier, monospace;
+  h1 {
+    cursor: pointer;
+  }
+  h1:hover {
+    text-decoration: dotted;
+  }
+}

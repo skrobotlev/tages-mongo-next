@@ -15,7 +15,11 @@ const ItemSchema = new mongoose.Schema({
     },
   },
   material: {
-    type: String,
+    type: Object,
+    content: {
+      id: Number,
+      name: String,
+    },
   },
   image: {
     type: String,

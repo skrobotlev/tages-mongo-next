@@ -2,7 +2,7 @@ const itemService = require("../service/item-service");
 const Item = require("../models/item.js");
 class ItemController {
   async getItems(req, res) {
-    console.log("get items");
+    // console.log("get items");
     try {
       const item = await Item.find();
       res.status(200).json(item);

@@ -1,5 +1,4 @@
 import * as React from "react";
-import CreditCardForm from "../components/credit-card/CreditCardForm";
 // import RequestPage from "../components/request-page";
 
 const CardPage = () => {
@@ -11,11 +10,7 @@ const CardPage = () => {
         alignItems: "center",
         margin: "25%",
       }}
-    >
-      {/* <input type="file" id="image" name="image" value="" /> */}
-      <CreditCardForm />
-      {/* <RequestPage /> */}
-    </div>
+    ></div>
   );
 };
 

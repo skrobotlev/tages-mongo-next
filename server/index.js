@@ -9,13 +9,6 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(express.json());
 app.use(cors());
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: process.env.CLIENT_URL,
-//   })
-// );
-
 app.use("/items", router);
 app.get("/", (req, res) => {
   res.send("Hello");

@@ -11,7 +11,7 @@ interface ItemCardProps {
   material?: any;
   code?: string | any;
   likeIcon?: any;
-  funcLS: (category, id) => any[];
+  funcLS: (category, id) => any;
 }
 
 const ItemCard: FC<ItemCardProps> = ({
@@ -35,6 +35,7 @@ const ItemCard: FC<ItemCardProps> = ({
 
   return (
     <div className="item-card">
+      {oldPrice && <h4 className="item-card_sale">Скидка</h4>}
       <img src={image} className="item-card__img" />
       <span className="item-card__price-span">
         <h1 className={oldPrice && "item-card__price_line-through"}>
