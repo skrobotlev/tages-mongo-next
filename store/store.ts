@@ -1,6 +1,5 @@
 import { makeAutoObservable, runInAction, toJS } from "mobx";
 import { getItems } from "../api/functions";
-import { sortBy } from "../utils/sort-function";
 
 export default class Store {
   addingCard = {};
@@ -13,12 +12,6 @@ export default class Store {
 
   get items() {
     return toJS(this._items);
-  }
-
-  sortedItems(prop: string, desc: boolean) {
-    const newItems = sortBy(toJS(this.items), { prop, desc });
-    this.items = newItems;
-    console.log(newItems);
   }
 
   set items(data) {

@@ -1,5 +1,4 @@
 import * as React from "react";
-// import RequestPage from "../components/request-page";
 
 const CardPage = () => {
   return (

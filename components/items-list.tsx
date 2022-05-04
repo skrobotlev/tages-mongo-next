@@ -58,39 +58,41 @@ const SortItems = observer(() => {
     }, []);
     return (
         <>
-            <span className="section-navigation__header">
-                <h2 className="section-navigaion__header-name">Главная</h2>
-                <h2 className="section-navigaion__header-name">/</h2>
-                <h2 className="section-navigaion__header-name">Системы хранения</h2>
-                <h2 className="section-navigaion__header-name">/</h2>
-                <h2 className="section-navigaion__header-name">Комплекты стеллажных систем</h2>
-            </span>
-            <h1 className="item-list__header">Комплекты стеллажных систем</h1>
-            <div className="sort-forms">
-                <FormControl sx={{ minWidth: 120 }}>
-                    <InputLabel id="demo-simple-select-helper-label">Сортировка</InputLabel>
-                    <Select
-                        style={{ height: "55px", width: "150px" }}
-                        value={sortPrice}
-                        label="Сортировка"
-                        onChange={handleChangePrice}
-                    >
-                        <MenuItem value={"Deshevle"} onClick={() => sortСheap()} >Дешевле</MenuItem>
-                        <MenuItem value={"Dorozhe"} onClick={() => sortExpensive()}>Дороже</MenuItem>
-                    </Select>
-                </FormControl>
-                <FormControl sx={{ ml: 1, minWidth: 120 }}>
-                    <InputLabel id="demo-simple-select-helper-label">Материал</InputLabel>
-                    <Select
-                        style={{ height: "55px", width: "150px" }}
-                        value={sortMaterial}
-                        label="Материал"
-                        onChange={handleChangeMaterial}
-                    >
-                        <MenuItem onClick={() => sortMaterialMetall()}>Металл</MenuItem>
-                        <MenuItem onClick={() => sortMaterialDerevo()}>Дерево</MenuItem>
-                    </Select>
-                </FormControl>
+            <div className="head-part-items-list">
+                <span className="section-navigation__header">
+                    <h2 className="section-navigaion__header-name">Главная</h2>
+                    <h2 className="section-navigaion__header-name">/</h2>
+                    <h2 className="section-navigaion__header-name">Системы хранения</h2>
+                    <h2 className="section-navigaion__header-name">/</h2>
+                    <h2 className="section-navigaion__header-name_actual">Комплекты стеллажных систем</h2>
+                </span>
+                <h1 className="item-list__header">Комплекты стеллажных систем</h1>
+                <div className="sort-forms">
+                    <FormControl sx={{ minWidth: 120 }}>
+                        <InputLabel id="demo-simple-select-helper-label">Сортировка</InputLabel>
+                        <Select
+                            style={{ height: "55px", width: "150px" }}
+                            value={sortPrice}
+                            label="Сортировка"
+                            onChange={handleChangePrice}
+                        >
+                            <MenuItem value={"Deshevle"} onClick={() => sortСheap()} >Дешевле</MenuItem>
+                            <MenuItem value={"Dorozhe"} onClick={() => sortExpensive()}>Дороже</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <FormControl sx={{ ml: 1, minWidth: 120 }}>
+                        <InputLabel id="demo-simple-select-helper-label">Материал</InputLabel>
+                        <Select
+                            style={{ height: "55px", width: "150px" }}
+                            value={sortMaterial}
+                            label="Материал"
+                            onChange={handleChangeMaterial}
+                        >
+                            <MenuItem onClick={() => sortMaterialMetall()}>Металл</MenuItem>
+                            <MenuItem onClick={() => sortMaterialDerevo()}>Дерево</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
             </div>
             <div className="items">
                 <div className="items__grid">

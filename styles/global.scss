@@ -42,7 +42,6 @@
 .sort-forms {
   display: flex;
   flex-direction: row;
-  margin: 20px 0px 0px 20px;
 }
 
 .add-input {
@@ -73,11 +72,26 @@
 }
 .item-list__header {
   font-family: SFUI-text;
+  font-size: 36px;
+  margin: 0 0 30px;
 }
 .section-navigation__header {
+  font-family: SFUI-text;
   display: flex;
+  h2:first-of-type {
+    padding-left: 0px;
+  }
 }
 .section-navigaion__header-name {
+  font-size: 16px;
   padding-left: 10px;
   color: gray;
+  &_actual {
+    font-size: 16px;
+    padding-left: 10px;
+    color: #000;
+  }
+}
+.head-part-items-list {
+  margin-left: 9.9%;
 }
