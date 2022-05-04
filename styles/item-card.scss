@@ -5,86 +5,105 @@
 
 .item-card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 30px;
+  position: relative;
+  padding: 12px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto auto auto;
   grid-template-areas:
-    ". img ."
-    ". img ."
-    "code code code"
-    "name name name"
-    "price-span cart-icon like-icon";
+    "img img"
+    "code code"
+    "name name"
+    "price-span icons-span";
+  row-gap: 10px;
   width: 350px;
   height: 350px;
-  border: 1px gray solid;
+  border: 1px rgb(242, 238, 238) solid;
   h1,
   h2,
-  h3 {
+  h3,
+  h5 {
     margin: 0;
-    // font-size: 16px;
-    //
+  }
+  span {
+    margin: 0;
   }
   h1,
   h2 {
     font-size: 16px;
   }
+  &__sale {
+    position: absolute;
+    text-align: center;
+    background-color: #eb5757;
+    padding: 3px 16px;
+    color: white;
+    top: 8px;
+    left: 0px;
+    font-size: 14px;
+  }
 }
-.item-card__img {
+
+.item-card__img-span {
   grid-area: img;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.item-card__img {
+  margin: 0 !important;
+  padding: 0 !important;
   max-width: 250px;
   max-height: 250px;
   margin-top: 10px;
 }
 .item-card__price {
   grid-area: price;
-  // h1 {
-  //   margin-left: 12px !important;
-  // }
-  // margin-left: 12px !important;
+
+  &-span {
+    grid-area: price-span;
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+  }
 }
+
 .item-card__name {
   grid-area: name;
-  margin-left: 12px !important;
 }
 .item-card__code {
   grid-area: code;
-  margin-left: 12px !important;
   color: gray;
   font-size: 10px;
   font-family: SFUI-text;
 }
-.item-card__price-span {
-  grid-area: price-span;
-  // margin-left: 12px !important;
-  display: flex;
-  flex-direction: row;
-}
 .item-card__price_line-through {
   text-decoration: line-through;
+  color: gray;
 }
-
 .item-card__like-icon {
   grid-area: like-icon;
 }
-
 .item-card__cart-icon {
   grid-area: cart-icon;
 }
 .item-card_sale {
   grid-area: sale-icon;
-  position: relative;
   margin: 0 !important;
   font-size: 15px;
-  bottom: 310px;
-  right: 330px;
   border: 1px solid #eb5757;
   background-color: #eb5757;
   color: white;
-  // display: block;
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  // font-weight: bold;
+}
+.item-card__icons-span {
+  grid-area: icons-span;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20px;
+  gap: 8px;
 }

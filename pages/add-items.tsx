@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import FileBase64 from "react-file-base64";
 import { createItem, getItems } from "../api/functions";
-import Store from "../store/store";
 
 function App() {
-  const store = new Store();
   const [item, setItem] = useState({
     name: "",
     image: "",
@@ -30,19 +28,19 @@ function App() {
           <input
             type="text"
             placeholder="Name"
-            className="input-field"
+            className="add-input"
             onChange={(e) => setItem({ ...item, name: e.target.value })}
           />
           <input
             type="text"
             placeholder="Code"
-            className="input-field"
+            className="add-input"
             onChange={(e) => setItem({ ...item, code: e.target.value })}
           />
           <input
             type="text"
             placeholder="OldPrice"
-            className="input-field"
+            className="add-input"
             onChange={(e) =>
               setItem({
                 ...item,
@@ -53,7 +51,7 @@ function App() {
           <input
             type="text"
             placeholder="CurrentPrice"
-            className="input-field"
+            className="add-input"
             onChange={(e) =>
               setItem({
                 ...item,
@@ -64,7 +62,7 @@ function App() {
           <input
             type="text"
             placeholder="Material-id"
-            className="input-field"
+            className="add-input"
             onChange={(e) =>
               setItem({
                 ...item,
@@ -75,7 +73,7 @@ function App() {
           <input
             type="text"
             placeholder="Material-name"
-            className="input-field"
+            className="add-input"
             onChange={(e) =>
               setItem({
                 ...item,

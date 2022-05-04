@@ -6,7 +6,7 @@ interface LikeIconProps {
 
 const LikeIcon: React.FC<LikeIconProps> = ({ activeClass }) => {
     return (
-        <svg width="20" height="20" viewBox="0 0 16 16" fill="" xmlns="http://www.w3.org/2000/svg" >
+        <svg width="22" height="22" viewBox="0 0 16 16" fill="" xmlns="http://www.w3.org/2000/svg" >
             <path
                 fillRule="evenodd"
                 clipRule="evenodd"

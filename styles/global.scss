@@ -31,10 +31,53 @@
   display: flex;
   justify-content: space-around;
   font-family: "Courier New", Courier, monospace;
+
   h1 {
     cursor: pointer;
   }
   h1:hover {
-    text-decoration: dotted;
+    text-decoration: underline;
   }
+}
+.sort-forms {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0px 0px 20px;
+}
+
+.add-input {
+  display: block;
+  width: 85%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn {
+  width: fit-content;
+  background: orange;
+  color: white;
+  font-size: 24px;
+  border-radius: 8px;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px 10px;
+}
+.item-list__header {
+  font-family: SFUI-text;
+}
+.section-navigation__header {
+  display: flex;
+}
+.section-navigaion__header-name {
+  padding-left: 10px;
+  color: gray;
 }

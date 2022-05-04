@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import React from "react";
-
+import LikeIcon from "./heart-like";
 interface ItemCardProps {
   image?: any;
   oldPrice?: number | any;
@@ -31,37 +31,41 @@ const ItemCard: FC<ItemCardProps> = ({
     !lsFlag && cartItems ? cartItems.includes(code) ? setFlag(true) : null : null
     !active && likeItems ? likeItems.includes(code) ? setActive(true) : null : null
 
-  }, [])
+  }, [lsFlag, active])
 
   return (
     <div className="item-card">
-      {oldPrice && <h4 className="item-card_sale">Скидка</h4>}
-      <img src={image} className="item-card__img" />
-      <span className="item-card__price-span">
-        <h1 className={oldPrice && "item-card__price_line-through"}>
-          {oldPrice}
-        </h1>
-        <h1 className="item-card__price">{currentPrice}</h1>
-      </span>
       <h2 className="item-card__name">{name}</h2>
       <h3 className="item-card__code">{code}</h3>
-      <i className="item-card__like-icon" onClick={() => {
-        !active ? setActive(true) : setActive(false);
-        funcLS("likes", code)
-      }}
-      >
-        {React.cloneElement(likeIcon, { activeClass: active })}
-      </i>
-      <i className="item-card__cart-icon" onClick={() => {
-        !lsFlag ? setFlag(true) : setFlag(false);
-        funcLS("cart", code)
-      }}>
-        {lsFlag ? (
-          <CheckCircleOutlineIcon style={{ color: "green" }} />
-        ) : (
-          <ShoppingCartIcon />
-        )}
-      </i>
+      <span className="item-card__price-span">
+        {oldPrice && <h5 className="item-card__price_line-through">
+          {oldPrice}
+        </h5>}
+        <h5 className="item-card__price">{currentPrice}</h5>
+      </span>
+      <span className="item-card__icons-span">
+        <i className="item-card__like-icon" onClick={() => {
+          !active ? setActive(true) : setActive(false);
+          funcLS("likes", code)
+        }}
+        >
+          <LikeIcon activeClass={active} />
+        </i>
+        <i className="item-card__cart-icon" onClick={() => {
+          !lsFlag ? setFlag(true) : setFlag(false);
+          funcLS("cart", code)
+        }}>
+          {lsFlag ? (
+            <CheckCircleOutlineIcon style={{ color: "green" }} />
+          ) : (
+            <ShoppingCartIcon />
+          )}
+        </i>
+      </span>
+      {oldPrice && <span className="item-card__sale">Скидка</span>}
+      <span className="item-card__img-span">
+        <img src={image} className="item-card__img" />
+      </span>
     </div>
   );
 };
