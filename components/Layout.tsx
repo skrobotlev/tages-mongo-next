@@ -4,7 +4,7 @@ import Link from "next/link";
 const Layout = ({ children }) => (
   <>
     <Head>
-      <title>Card App</title>
+      <title>Products grid</title>
     </Head>
     <div className="navigation">
       <Link href="/items-list">
