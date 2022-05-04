@@ -31,7 +31,6 @@ const SortItems = observer(() => {
     };
     const handleChangeMaterial = (event: SelectChangeEvent) => {
         setSortMaterial(event.target.value);
-        console.log()
     };
     const sortСheap = () => {
         let arr = [...store.items].sort((a, b) => a.price.currentPrice - b.price.currentPrice);
@@ -88,8 +87,8 @@ const SortItems = observer(() => {
                             label="Материал"
                             onChange={handleChangeMaterial}
                         >
-                            <MenuItem onClick={() => sortMaterialMetall()}>Металл</MenuItem>
-                            <MenuItem onClick={() => sortMaterialDerevo()}>Дерево</MenuItem>
+                            <MenuItem value={"Металл"} onClick={() => sortMaterialMetall()}>Металл</MenuItem>
+                            <MenuItem value={"Дерево"} onClick={() => sortMaterialDerevo()}>Дерево</MenuItem>
                         </Select>
                     </FormControl>
                 </div>
