@@ -10,9 +10,9 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(express.json());
 app.use(cors());
 app.use("/items", router);
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello");
+// });
 
 const start = async () => {
   try {
