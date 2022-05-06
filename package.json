@@ -6,7 +6,8 @@
     "dev": "next dev",
     "serve": "nodemon server/index.js",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -30,6 +31,8 @@
     "express-validator": "^6.11.1",
     "formik": "^2.2.0",
     "formik-material-ui": "^3.0.0",
+    "heroku": "^7.60.2",
+    "heroku-cli": "^7.0.9",
     "isomorphic-unfetch": "^3.0.0",
     "mobx": "^6.3.2",
     "mobx-react-lite": "^3.2.0",
