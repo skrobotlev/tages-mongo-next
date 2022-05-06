@@ -3,13 +3,16 @@ import "../styles/global.scss";
 import "../styles/main.scss";
 import "../styles/item-card.scss";
 import React from "react";
-import ContextProvider from "../store/";
+import ContextProvider from "../store";
+import { SessionProvider } from "next-auth/react"
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <ContextProvider>
       <Layout>
-        <Component {...pageProps} />
+        <SessionProvider session={session}>
+          <Component {...pageProps} />
+        </SessionProvider>
       </Layout>
     </ContextProvider>
   );
